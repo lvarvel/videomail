@@ -1,7 +1,9 @@
 Videomail::Application.routes.draw do
   resources :videos
 
-  resources :users
+  resources :users do
+    resources :videos
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
