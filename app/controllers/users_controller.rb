@@ -11,6 +11,30 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /users/1/sent_videos
+  # GET /users/1/sent_videos.json
+  def sent_videos
+    @user = User.find(params[:id])
+    @videos = user.sent_videos
+
+    respond_to do |format|
+      format.html # sent_videos.html.erb
+      format.json { render json: @videos }
+    end
+  end
+
+  # GET /users/1/recieved_videos
+  # GET /users/1/recieved_videos.json
+  def received_videos
+    @user = User.find(params[:id])
+    @videos = user.received_videos
+
+    respond_to do |format|
+      format.html # received_videos.html.erb
+      format.json { render json: @videos }
+    end
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show

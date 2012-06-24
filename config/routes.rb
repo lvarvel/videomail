@@ -2,7 +2,10 @@ Videomail::Application.routes.draw do
   resources :videos
 
   resources :users do
-    resources :videos
+    member do
+      get 'sent_videos'
+      get 'received_videos'
+    end
   end
 
   # The priority is based upon order of creation:
