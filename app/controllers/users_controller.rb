@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   # GET /users/1/sent_videos.json
   def sent_videos
     @user = User.find(params[:id])
-    @videos = user.sent_videos
+    @videos = @user.sent_videos
 
     respond_to do |format|
       format.html # sent_videos.html.erb
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   # GET /users/1/recieved_videos.json
   def received_videos
     @user = User.find(params[:id])
-    @videos = user.received_videos
+    @videos = @user.received_videos
 
     respond_to do |format|
       format.html # received_videos.html.erb
